@@ -3,11 +3,127 @@
 @tailwind utilities;
 
 /*
-
+  Use components classes with caution!
+  See why here: https://tailwindcss.com/docs/reusing-styles#extracting-classes-with-apply
+*/
 @layer components {
+  .btn {
+    @apply inline-flex items-center justify-center py-2 px-4 border border-transparent rounded-md font-medium cursor-pointer
+             focus:outline-none focus:ring-2 focus:ring-offset-2 sm:text-sm;
+  }
+
   .btn-primary {
-    @apply py-2 px-4 bg-blue-200;
+    @apply text-white bg-primary-600 hover:bg-primary-700 focus:ring-primary-500;
+  }
+
+  .btn-primary-light {
+    @apply text-primary-600 bg-primary-100 hover:bg-primary-200 focus:ring-primary-500;
+  }
+
+  .btn-secondary {
+    @apply text-gray-700 border-gray-300 bg-white hover:bg-gray-50 shadow-sm focus:ring-gray-500;
+  }
+
+  .btn-warning {
+    @apply text-orange-700 bg-orange-100 hover:bg-orange-200 focus:ring-orange-500;
+  }
+
+  .btn-danger {
+    @apply text-red-700 bg-red-100 hover:bg-red-200 focus:ring-red-500;
+  }
+
+  .text-input {
+    @apply appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400;
+    @apply focus:outline-none focus:ring-primary-500 focus:border-primary-500 sm:text-sm
+  }
+
+  td.selected {
+    @apply relative;
+  }
+
+  td.selected::before, [data-table-cell-opened] > *::before {
+    @apply absolute border-solid border-[2px] border-blue-700 z-0 pointer-events-none;
+    top: -1px;
+    right: -1px;
+    bottom: 0;
+    left: 0;
+    content: "";
+  }
+
+  table {
+    border-spacing: 0;
+    border-collapse: collapse;
+  }
+
+  th, td {
+    padding: 0;
+  }
+
+  tr[data-table-collapsable]:not([data-table-collapsed]) [data-table-closed-icon] {
+    display: none;
+  }
+
+  tr[data-table-collapsable]:not([data-table-collapsed]) [data-table-opened-icon] {
+    display: auto; /* don't change even if auto is not a correct value, it does what it's meant to ;-) */
+  }
+
+  tr[data-table-collapsable][data-table-collapsed] [data-table-closed-icon] {
+    display: auto; /* don't change even if auto is not a correct value, it does what it's meant to ;-) */
+  }
+
+  tr[data-table-collapsable][data-table-collapsed] [data-table-opened-icon] {
+    display: none;
+  }
+
+  /*
+  To use with simple-form
+  */
+  input[type=file]::-webkit-file-upload-button, input[type=file]::file-selector-button {
+    @apply text-white bg-primary-600 hover:bg-primary-700 font-medium text-sm cursor-pointer border-0 py-2.5 pl-8 pr-4;
+    margin-inline-start: -1rem;
+    margin-inline-end: 1rem;
+  }
+
+  abbr[title=required] {
+  @apply !text-red-500 no-underline;
+  }
+
+  input[type="radio"] + label {
+  @apply border-gray-300;
+  }
+
+  input[type="radio"] + label + svg {
+  @apply invisible;
+  }
+
+  input[type="radio"]:checked + label {
+  @apply border-transparent border-primary-500 ring-2 ring-primary-500;
+  }
+
+  input[type="radio"]:checked + label + svg{
+    @apply visible;
+  }
+
+  input[type="checkbox"].toggle-checkbox:checked {
+    @apply translate-x-4 right-0.5 bg-white;
+  }
+
+  input[type="checkbox"].toggle-checkbox:focus {
+    @apply ring-0 ring-offset-0 border-0;
+  }
+
+  input[type="checkbox"].toggle-checkbox:checked + .toggle-label {
+    @apply bg-primary-600;
+  }
+
+  input[type="checkbox"].toggle-checkbox:focus + .toggle-label {
+    @apply outline-none ring-2 ring-offset-2 ring-primary-600;
+  }
+
+  div > .parent-hover-visible {
+    @apply opacity-0;
+  }
+  div:hover > .parent-hover-visible {
+    @apply opacity-100;
   }
 }
-
-*/
