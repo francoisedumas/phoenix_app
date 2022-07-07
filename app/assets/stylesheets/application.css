@@ -13,3 +13,25 @@
  *= require_tree .
  *= require_self
  */
+.scroll-top {
+  position: absolute;
+  top: 120vh;
+  bottom: 32px;
+  right: 16px;
+}
+
+.button-to-top {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 80vh;
+  border-radius: .25rem;
+  padding: 16px;
+  background-color: hsl(0, 1%, 16%);
+  color: hsl(0, 0%, 100%);
+  font-weight: 700;
+}
+
+.button-to-top:hover {
+  color: hsl(0, 0%, 100%);
+  background-color: hsl(0, 1%, 44%);
+}
