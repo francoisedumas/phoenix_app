@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="scroll-smooth">
   <head>
     <title>PhoenixApp</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -15,11 +15,14 @@
 
   </head>
 
-  <body>
+  <body class="relative">
     <%= render 'shared/navbar' %>
     <main class="container mx-auto mt-8 mb-8 px-5 flex">
       <%= yield %>
     </main>
+    <div class="scroll-top">
+      <a class="button-to-top" href="#"><i class="fas fa-chevron-circle-up"></i></a>
+    </div>
     <%= render 'shared/footer' %>
   </body>
 </html>
