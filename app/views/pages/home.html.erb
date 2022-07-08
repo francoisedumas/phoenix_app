@@ -1,6 +1,9 @@
-<div class="flex flex-wrap justify-center">
-  <%= render(ServiceCardComponent.new(image: "building_security.jpg", title: "What we do", description: "Lorem")) %>
-  <%= render(ServiceCardComponent.new(image: "fire_security.jpg", title: "What we do", description: "Lorem")) %>
-  <%= render(ServiceCardComponent.new(image: "training_safety.jpg", title: "What we do", description: "Lorem")) %>
-  <%= render(ServiceCardComponent.new(image: "training_security.jpg", title: "What we do", description: "Lorem")) %>
+<div class="flex md:flex-row flex-wrap justify-center w-full">
+  <%= render(FeatureSectionComponent.new(title: t('.introduction_title'), description: t('.introduction_text'), svg_right: true)) %>
+  <div class="flex flex-wrap justify-center">
+    <%= render(ServiceCardComponent.new(image: "building_security.jpg", title: t('.service_1_title'), description: t('.service_1_description'))) %>
+    <%= render(ServiceCardComponent.new(image: "fire_security.jpg", title: t('.service_2_title'), description: t('.service_2_description'))) %>
+    <%= render(ServiceCardComponent.new(image: "training_safety.jpg", title: t('.service_3_title'), description: t('.service_3_description'))) %>
+    <%= render(ServiceCardComponent.new(image: "training_security.jpg", title: t('.service_4_title'), description: t('.service_4_description'))) %>
+  </div>
 </div>
