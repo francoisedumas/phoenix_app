@@ -12,6 +12,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      minHeight: {
+        '1/2': '50%',
+      },
       colors: {
         primary: colors.green,
         black: {
