@@ -16,6 +16,11 @@
   </head>
 
   <body class="relative">
+    <div class="absolute top-2 right-24">
+      <% flash.each do |flash_type, message| %>
+        <%= flash_alert(flash_type, message) %>
+      <% end %>
+    </div>
     <%= render 'shared/navbar' %>
     <main class="flex">
       <%= yield %>
