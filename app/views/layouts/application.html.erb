@@ -29,5 +29,6 @@
       <a class="button-to-top" href="#"><i class="fas fa-chevron-circle-up"></i></a>
     </div>
     <%= render 'shared/footer' %>
+    <%= render 'layouts/modal' if content_for(:need_modal?) %>
   </body>
 </html>
