@@ -7,5 +7,4 @@ class ServiceCardComponent < ViewComponent::Base
     @title = title
     @description = description
   end
-
 end
