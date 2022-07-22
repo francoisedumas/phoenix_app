@@ -1,0 +1,5 @@
+meta_product_name: "Phoenix Security Company"
+meta_title: "Phoenix Security Company - Your security partner"
+meta_description: "We help you achieve the security level your organisation needs to minimise exposure to security and fire risk and maximise your company resilience."
+meta_image: "logo.png" # should exist in `app/assets/images/`
+twitter_account: "@phoenix_security_company"   # required for Twitter Cards
