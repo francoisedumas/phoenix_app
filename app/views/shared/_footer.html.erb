@@ -3,9 +3,9 @@
   <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
     <div class="pb-8 md:flex md:items-center md:justify-around">
       <div class="flex space-x-6">
-        <a href="#"  class="text-sm font-semibold text-gray-400 tracking-wider uppercase">About</h3>
-        <a href="#"  class="text-sm font-semibold text-gray-400 tracking-wider uppercase">Contact us</h3>
-        <a href="#"  class="text-sm font-semibold text-gray-400 tracking-wider uppercase">Legal</h3>
+        <a href="#"  class="text-sm font-semibold text-gray-400 tracking-wider uppercase">About</a>
+        <a href="#"  class="text-sm font-semibold text-gray-400 tracking-wider uppercase">Contact us</a>
+        <%= button_tag "Legal", class: "text-sm font-semibold text-gray-400 tracking-wider uppercase", data: modal_with(render("shared/legal", local: "OOOMMMMGGGG")) %>
       </div>
       <div class="mt-12 xl:mt-0">
         <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">Language</h3>
