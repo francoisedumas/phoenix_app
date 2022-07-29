@@ -35,3 +35,8 @@
   color: hsl(0, 0%, 100%);
   background-color: hsl(0, 1%, 44%);
 }
+
+/* remove the dropdown arrow next to HTML summary details */
+summary::marker {
+  content: "";
+}

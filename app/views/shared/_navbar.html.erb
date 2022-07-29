@@ -26,6 +26,11 @@
             <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"  data-toggle-target="content">
               <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
             </svg>
+            <!--
+              The menu is the ul list before the end of nav
+
+              It is displayed only on mobile and on click on the icon
+            -->
           </button>
         </div>
         <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
@@ -46,11 +51,22 @@
           </div>
         </div>
         <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-          <button type="button" class="bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
-            <span class="sr-only">View notifications</span>
-            <!-- Heroicon name: outline/bell -->
-            <i class="fas fa-globe h-6 w-6"></i>
-          </button>
+          <details class="dropdown relative inline-block">
+            <summary class="bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white">
+                <i class="fas fa-globe h-6 w-6"></i>
+            </summary>
+            <ul
+              style="right: -10px;"
+              class="dropdown-menu absolute min-w-max text-base z-50 float-left list-none text-left rounded-lg shadow-lg mt-1 bg-clip-padding border-none bg-gray-800"
+            >
+              <li class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-300 hover:bg-gray-700 hover:text-white hover:rounded-lg focus:text-white focus:bg-gray-700 focus:rounded-lg">
+                <%= link_to "EN", locale: :en %>
+              </li>
+              <li class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-300 hover:bg-gray-700 hover:text-white hover:rounded-lg focus:text-white focus:bg-gray-700 focus:rounded-lg">
+                <%= link_to "TH", locale: :th %>
+              </li>
+            </ul>
+          </details>
         </div>
       </div>
     </div>
