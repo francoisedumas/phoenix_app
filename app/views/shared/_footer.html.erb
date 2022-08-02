@@ -7,9 +7,17 @@
         <a href="#"  class="text-sm font-semibold text-gray-400 tracking-wider uppercase">Contact us</a>
         <%= button_tag "Legal", class: "text-sm font-semibold text-gray-400 tracking-wider uppercase", data: modal_with(render("shared/legal", local: "OOOMMMMGGGG")) %>
       </div>
-      <div class="mt-12 xl:mt-0">
+      <div class="mt-12 xl:mt-0" data-controller="form">
         <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">Language</h3>
-        <form class="mt-4 sm:max-w-xs">
+        <%= simple_form_for :link, url: language_path, method: "GET", data: { action: "change->form#submit", form_target: "form" } do |f| %>
+          <%= f.input :url,
+                      label: false,
+                      selected: @language,
+                      collection: [ ["English", @english_link], ["Thai", @thai_link] ],
+                      class: "w-full bg-none bg-gray-700 border border-transparent rounded-md py-2 pl-3 pr-10 text-base text-white focus:outline-none focus:ring-white focus:border-white sm:text-sm",
+                      include_blank: false  %>
+          <% end %>
+        <%# <form class="mt-4 sm:max-w-xs">
           <fieldset class="w-full">
             <label for="language" class="sr-only">Language</label>
             <div class="relative">
@@ -25,7 +33,7 @@
               </div>
             </div>
           </fieldset>
-        </form>
+        </form> %>
       </div>
     </div>
 
